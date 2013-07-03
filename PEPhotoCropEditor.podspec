@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/kishikawakatsumi/PEPhotoCropEditor.git", :tag => "v1.0.0" }
   s.ios.deployment_target = '5.0'
   s.source_files = 'Lib/*'
-  s.resources = "Resources/*.png"
+  s.resources = "Resources/*.bundle"
   s.framework  = 'QuartzCore', 'AVFoundation'
   s.requires_arc = true
 end
