@@ -178,6 +178,7 @@ static const CGFloat MarginRight = MarginLeft;
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.image = self.image;
     [self.zoomingView addSubview:self.imageView];
+    [self setAspectRatio:1.0f];
 }
 
 #pragma mark -
@@ -317,7 +318,7 @@ static const CGFloat MarginRight = MarginLeft;
 
 - (void)cropRectViewDidBeginEditing:(PECropRectView *)cropRectView
 {
-    self.resizing = YES;
+    self.resizing = NO;
 }
 
 - (void)cropRectViewEditingChanged:(PECropRectView *)cropRectView

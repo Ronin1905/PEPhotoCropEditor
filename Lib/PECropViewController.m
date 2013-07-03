@@ -11,8 +11,8 @@
 
 @interface PECropViewController () <UIActionSheetDelegate>
 
-@property (nonatomic) PECropView *cropView;
 @property (nonatomic) UIActionSheet *actionSheet;
+@property (nonatomic) PECropView *cropView;
 
 @end
 
@@ -44,6 +44,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     
     self.cropView = [[PECropView alloc] initWithFrame:contentView.bounds];
     [contentView addSubview:self.cropView];
+
 }
 
 - (void)viewDidLoad
@@ -65,9 +66,10 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
                                                                        target:self
                                                                        action:@selector(constrain:)];
     self.toolbarItems = @[flexibleSpace, constrainButton, flexibleSpace];
-    self.navigationController.toolbarHidden = NO;
+    self.navigationController.toolbarHidden = YES;
     
     self.cropView.image = self.image;
+    self.cropView.aspectRatio = 1.0f;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
